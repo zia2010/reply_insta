@@ -1,0 +1,15 @@
+<!-- Simple chat bubble icon for Reply Assist -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#833ab4"/>
+      <stop offset="50%" style="stop-color:#fd1d1d"/>
+      <stop offset="100%" style="stop-color:#fcb045"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+  <path d="M32 40h64a8 8 0 0 1 8 8v32a8 8 0 0 1-8 8H60l-16 14v-14H32a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8z" fill="#fff" opacity="0.95"/>
+  <circle cx="48" cy="64" r="5" fill="#833ab4"/>
+  <circle cx="64" cy="64" r="5" fill="#c13584"/>
+  <circle cx="80" cy="64" r="5" fill="#fd1d1d"/>
+</svg>

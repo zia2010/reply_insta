@@ -1,0 +1,320 @@
+/* ═══════════════════════════════════════════════════════════
+   Instagram Reply Assist — Panel CSS
+   Injected into instagram.com by content.js
+   ═══════════════════════════════════════════════════════════ */
+
+/* ───────── Toggle Button (floating) ───────── */
+
+.ira-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ira-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ───────── Panel Root ───────── */
+
+#ira-panel-root {
+  position: fixed;
+  top: 60px;
+  right: 16px;
+  z-index: 99998;
+  width: 360px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #262626;
+}
+
+/* ───────── Panel Container ───────── */
+
+.ira-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+
+/* ───────── Header ───────── */
+
+.ira-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+}
+
+.ira-logo {
+  font-size: 20px;
+}
+
+.ira-title {
+  flex: 1;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+.ira-btn-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ira-btn-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ───────── Sections ───────── */
+
+.ira-section {
+  padding: 12px 16px;
+  border-top: 1px solid #efefef;
+}
+
+.ira-label {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8e8e8e;
+  margin-bottom: 6px;
+}
+
+.ira-label small {
+  text-transform: none;
+  font-weight: 400;
+  color: #b0b0b0;
+}
+
+/* ───────── Detected Message ───────── */
+
+.ira-detected-msg {
+  background: #fafafa;
+  border: 1px solid #efefef;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #8e8e8e;
+  max-height: 120px;
+  overflow-y: auto;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.ira-detected-msg.ira-msg-active {
+  color: #262626;
+  background: #fff;
+  border-color: #dbdbdb;
+}
+
+/* ───────── Buttons ───────── */
+
+.ira-actions-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ira-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.ira-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ira-btn-primary {
+  background: linear-gradient(135deg, #833ab4, #c13584);
+  color: #fff;
+}
+
+.ira-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6e2fa0, #a82d70);
+}
+
+.ira-btn-secondary {
+  background: #efefef;
+  color: #262626;
+}
+
+.ira-btn-secondary:hover {
+  background: #dbdbdb;
+}
+
+/* ───────── Intent Badge ───────── */
+
+.ira-intent-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.ira-intent-inquiry { background: #e3f2fd; color: #1565c0; }
+.ira-intent-complaint { background: #fce4ec; color: #c62828; }
+.ira-intent-compliment { background: #e8f5e9; color: #2e7d32; }
+.ira-intent-order-issue { background: #fff3e0; color: #e65100; }
+.ira-intent-pricing { background: #f3e5f5; color: #6a1b9a; }
+
+/* ───────── Reply Box ───────── */
+
+.ira-reply-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  color: #262626;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.ira-reply-box:focus {
+  outline: none;
+  border-color: #833ab4;
+  box-shadow: 0 0 0 2px rgba(131, 58, 180, 0.15);
+}
+
+/* ───────── Escalation Warning ───────── */
+
+.ira-escalation-box {
+  background: #fff5f5;
+  border: 2px solid #e53935;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+
+.ira-escalation-box strong {
+  color: #c62828;
+  font-size: 14px;
+}
+
+.ira-escalation-box p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #262626;
+}
+
+.ira-escalation-action {
+  font-weight: 600;
+  color: #c62828 !important;
+}
+
+/* ───────── Loading ───────── */
+
+.ira-loading {
+  text-align: center;
+  padding: 16px;
+  color: #8e8e8e;
+  font-style: italic;
+}
+
+.ira-loading::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #dbdbdb;
+  border-top-color: #833ab4;
+  border-radius: 50%;
+  animation: ira-spin 0.8s linear infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@keyframes ira-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ───────── Error ───────── */
+
+.ira-error-box {
+  background: #fff3e0;
+  border: 1px solid #ffb74d;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #e65100;
+}
+
+/* ───────── Footer ───────── */
+
+.ira-footer {
+  padding: 10px 16px;
+  border-top: 1px solid #efefef;
+  text-align: center;
+}
+
+.ira-btn-link {
+  background: none;
+  border: none;
+  color: #833ab4;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ira-btn-link:hover {
+  text-decoration: underline;
+}
+
+/* ───────── Scrollbar (panel) ───────── */
+
+#ira-panel-root::-webkit-scrollbar {
+  width: 6px;
+}
+
+#ira-panel-root::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#ira-panel-root::-webkit-scrollbar-thumb {
+  background: #dbdbdb;
+  border-radius: 3px;
+}
